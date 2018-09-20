@@ -90,9 +90,9 @@ public class WebController {
 	 */
 	@RequestMapping(value = "/cs480/petre24", method = RequestMethod.GET)
 	String waffleFries() {
-		return "W\nWa\nWaf\nWaff\nWaffl\nWaffle\nWaffle F\nWaffle Fr\n"
-        		+ "Waffle Fri\nWaffle Frie\nWaffle Fries\nWaffle Frie\nWaffle Fri\n"
-        		+ "Waffle Fr\nWaffle F\nWaffle\nWaffl\nWaff\nWaf\nWa\nW\n";	
+		return "W\r\nWa\r\nWaf\r\nWaff\r\nWaffl\r\nWaffle\r\nWaffle F\r\nWaffle Fr\r\n"
+        		+ "Waffle Fri\r\nWaffle Frie\r\nWaffle Fries\r\nWaffle Frie\r\nWaffle Fri\r\n"
+        		+ "Waffle Fr\r\nWaffle F\r\nWaffle\r\nWaffl\r\nWaff\r\nWaf\r\nWa\r\nW\r\n";	
 	}	
 
 	/**
