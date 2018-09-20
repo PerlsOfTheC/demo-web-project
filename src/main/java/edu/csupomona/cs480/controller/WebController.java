@@ -158,6 +158,16 @@ public class WebController {
 	List<GpsProduct> listGpsProducts() {
 		return gpsProductManager.listAllGpsProducts();
 	}
+	
+	/* Leslies uncreative method*/
+	@RequestMapping(value = "/cs480/leslie", method = RequestMethod.GET)
+	String unCreative() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+		return "Wow, this is all I did";
+	}
+
 
 	/*********** Web UI Test Utility **********/
 	/**
