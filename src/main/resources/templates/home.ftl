@@ -28,7 +28,8 @@
                 <tr>
                     <td>ID</td>
                     <td>Name</td> 
-                    <td>Major</td> 
+                    <td>Major</td>
+                    <td>Age</td>
                     <td>Creation Time</td>
                     <td>Delete</td>
                 </tr>
@@ -37,6 +38,7 @@
                             <td>${user.id}</td>
                             <td>${user.name}</td>
                             <td>${user.major}</td>
+                            <td>${user.age}</td>
                             <td>${user.creationTime}</td>
                             <td><button onclick="deleteUser('${user.id}')">Delete</button></td>
                         </tr>
@@ -51,14 +53,16 @@
             <table border="1">
                 <tr>
                     <td>ID</td>
-                    <td>Name</td> 
-                    <td>Major</td>                     
+                    <td>Name</td>
+                    <td>Major</td>
+                    <td>Age</td>
                     <td>Add</td>
                 </tr>                
                 <tr>
                     <td><input type="text" id="input_id"></td>
                     <td><input type="text" id="input_name"></td>
-                    <td><input type="text" id="input_major"></td>                    
+                    <td><input type="text" id="input_major"></td>
+                    <td><input type="text" id="input_age"></td>
                     <td><button onclick="addUser()">Add</button></td>
                 </tr>
             </table>
@@ -74,11 +78,13 @@
                     <td>ID</td>
                     <td>Name</td>
                     <td>Major</td>
+                    <td>Age</td>
                 </tr>
                 <tr>
                     <td><label id="result_id"></td>
                     <td><label id="result_name"></td>
                     <td><label id="result_major"></td>
+                    <td><label id="result_age"></td>
                 </tr>
             </table>
         </div>

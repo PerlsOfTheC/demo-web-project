@@ -28,6 +28,7 @@
 	                    <td>ID</td>
 	                    <td>Name</td>
 	                    <td>Major</td>
+						<td>Age</td>
 	                    <td>Creation Time</td>
 	                    <td>Delete</td>
 	                </tr>
@@ -36,6 +37,7 @@
 	                    <td>{{user.id}}</td>
 	                    <td>{{user.name}}</td>
 	                    <td>{{user.major}}</td>
+						<td>{{user.age}}</td>
 	                    <td>{{user.creationTime}}</td>
                         <td><button ng-click="deleteUser(user.id)">Delete</button></td>
 	                </tr>
@@ -51,12 +53,14 @@
 	                    <td>ID</td>
 	                    <td>Name</td>
 	                    <td>Major</td>
+						<td>Age</td>
 	                    <td>Add</td>
 	                </tr>
 	                <tr>
 	                    <td><input type="text" ng-model="new_id"></td>
 	                    <td><input type="text" ng-model="new_name"></td>
 	                    <td><input type="text" ng-model="new_major"></td>
+						<td><input type="text" ng-model="new_age"></td>
 	                    <td><button ng-click="addUser()">Add</button></td>
 	                </tr>
 	            </table>
@@ -72,11 +76,13 @@
 	                    <td>ID</td>
 	                    <td>Name</td>
 	                    <td>Major</td>
+						<td>Age</td>
 	                </tr>
 	                <tr>
 	                    <td><label>{{founduser.id}}</label></td>
 	                    <td><label>{{founduser.name}}</label></td>
 	                    <td><label>{{founduser.major}}</label></td>
+						<td><label>{{founduser.age}}</label></td>
 	                </tr>
 	            </table>
 	        </div>

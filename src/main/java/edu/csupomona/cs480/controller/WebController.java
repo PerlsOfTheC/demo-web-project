@@ -103,17 +103,20 @@ public class WebController {
 	 * @param id
 	 * @param name
 	 * @param major
+	 * @param age
 	 * @return
 	 */
 	@RequestMapping(value = "/cs480/user/{userId}", method = RequestMethod.POST)
 	User updateUser(
 			@PathVariable("userId") String id,
 			@RequestParam("name") String name,
-			@RequestParam(value = "major", required = false) String major) {
+			@RequestParam(value = "major", required = false) String major,
+			@RequestParam(value = "age", required = false) int age) {
 		User user = new User();
 		user.setId(id);
 		user.setMajor(major);
 		user.setName(name);
+		user.setAge(age);
 		userManager.updateUser(user);
 		return user;
 	}

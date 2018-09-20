@@ -40,6 +40,7 @@ class UserList extends React.Component {
 	                    <td>{user.id}</td>
 	                    <td>{user.name}</td>
 	                    <td>{user.major}</td>
+                        <td>{user.age}</td>
 	                    <td>{user.creationTime}</td>
                         <td><button onClick={() => this.deleteUser(user.id)}>Delete</button></td>
 	                </tr>
@@ -55,6 +56,7 @@ class UserList extends React.Component {
 	                    <td>ID</td>
 	                    <td>Name</td>
 	                    <td>Major</td>
+                        <td>Age</td>
 	                    <td>Creation Time</td>
 	                    <td>Delete</td>
 	                </tr>
@@ -72,12 +74,14 @@ class UserList extends React.Component {
 	                    <td>ID</td>
 	                    <td>Name</td>
 	                    <td>Major</td>
+                        <td>Age</td>
 	                    <td>Add</td>
 	                </tr>
 	                <tr>
 	                    <td><input type="text" ng-model="new_id"/></td>
 	                    <td><input type="text" ng-model="new_name"/></td>
 	                    <td><input type="text" ng-model="new_major"/></td>
+                        <td><input type="text" ng-model="new_age"/></td>
 	                    <td><button onClick={() => this.addUser()}>Add</button></td>
 	                </tr>
 	            </table>

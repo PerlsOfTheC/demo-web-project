@@ -16,6 +16,8 @@ public class User {
     private String major;
     /** The timestamp when the user is being created */
     private String creationTime = new Date(System.currentTimeMillis()).toString();
+    // The age of the user
+	private int age;
 
     public String getId() {
         return id;
@@ -47,5 +49,13 @@ public class User {
 
 	public void setCreationTime(String creationTime) {
 		this.creationTime = creationTime;
+	}
+
+	public void setAge(int age) {
+    	this.age = age;
+	}
+
+	public int getAge() {
+    	return age;
 	}
 }
