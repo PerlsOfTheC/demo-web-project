@@ -70,6 +70,18 @@ public class WebController {
                 // with the URL: http://localhost:8080/
                 return "whaddup whadduppp";
         }
+        
+        /**
+         * This addition specifies the function from calling
+         *      http://localhost:8080/cs480/Jacob
+         * The method returns a string that describes this specific user
+         */
+        @RequestMapping(value = "/cs480/Jacob", method = RequestMethod.GET)
+        String userDescrip() {
+                return "/n/nI like Bacon, Purple, and Petre";
+        }
+
+
 
 	/**
 	 * This is a simple example of how to use a data manager
