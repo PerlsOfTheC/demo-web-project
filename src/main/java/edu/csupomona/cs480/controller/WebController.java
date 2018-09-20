@@ -64,7 +64,7 @@ public class WebController {
          *      http://localhost:8080/cs480/Amanda
          */
         @RequestMapping(value = "/cs480/Amanda", method = RequestMethod.GET)
-        String healthCheck() {
+        String whaddupStatus() {
                 // You can replace this with other string,
                 // and run the application locally to check your changes
                 // with the URL: http://localhost:8080/
