@@ -81,7 +81,19 @@ public class WebController {
                 return "\n\nI like Bacon, Purple, and Petre";
         }
 
-
+	/**
+	 * This is a simple example of how the HTTP API works.
+	 * It returns a string that forms and disappears letter by letter in the HTTP response.
+	 * To try it, run the web application locally.
+	 * In your web browser, go to the link:
+	 * 	http://localhost:8080/cs480/petre24
+	 */
+	@RequestMapping(value = "/cs480/petre24", method = RequestMethod.GET)
+	String waffleFries() {
+		return "W\nWa\nWaf\nWaff\nWaffl\nWaffle\nWaffle F\nWaffle Fr\n"
+        		+ "Waffle Fri\nWaffle Frie\nWaffle Fries\nWaffle Frie\nWaffle Fri\n"
+        		+ "Waffle Fr\nWaffle F\nWaffle\nWaffl\nWaff\nWaf\nWa\nW\n";	
+	}	
 
 	/**
 	 * This is a simple example of how to use a data manager
