@@ -78,7 +78,7 @@ public class WebController {
          */
         @RequestMapping(value = "/cs480/Jacob", method = RequestMethod.GET)
         String userDescrip() {
-                return "/n/nI like Bacon, Purple, and Petre";
+                return "\n\nI like Bacon, Purple, and Petre";
         }
 
 
