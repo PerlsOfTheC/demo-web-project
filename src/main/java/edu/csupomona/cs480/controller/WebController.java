@@ -2,6 +2,7 @@ package edu.csupomona.cs480.controller;
 
 import java.util.List;
 
+import org.apache.commons.math3.stat.FrequencyTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -80,7 +81,24 @@ public class WebController {
         String userDescrip() {
                 return "\n\nI like Bacon, Purple, and Petre";
         }
+        /**
+         * This will be accessed through the link:
+         *      http://localhost:8080/cs480/FoodFrequency
+         * The method will eventually look at the number of times certain words are used
+         */
+        @RequestMapping(value = "/cs480/Jacob", method = RequestMethod.GET)
+        String foodFreq() {
+        	
+	        Frequency f = new Frequency();
+	        f.addValue("steak");
+	        f.addValue("brocolli");
+	        f.addValue("mayonaise");
+	        System.out.println(f.getCount("Steak"));
+	        System.out.println(f.getCumPct("steak"));
+	        System.out.println(f.getCumPct("mayo"));
 
+                return "\nComplete";
+        }
 	/**
 	 * This is a simple example of how the HTTP API works.
 	 * It returns a string that forms and disappears letter by letter in the HTTP response.
