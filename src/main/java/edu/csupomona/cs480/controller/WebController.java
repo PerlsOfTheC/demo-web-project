@@ -1,6 +1,7 @@
 package edu.csupomona.cs480.controller;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -10,6 +11,7 @@ import java.util.Map;
 import com.google.common.collect.ImmutableMap;
 
 import org.apache.commons.math3.stat.Frequency;
+import org.apache.commons.io.filefilter.SuffixFileFilter;
 
 import org.imgscalr.Scalr;
 import org.jsoup.Jsoup;
@@ -285,14 +287,14 @@ public class WebController {
       		for( int i = 0; i < files.length; i++ )
          		System.out.println(files[i]);
       		
-	}
+	
 
-      System.out.println("\nFile with extenstion txt\n");
-      String[] filesNames = currentDirectory.list( new SuffixFileFilter("txt") );
-      for( int i = 0; i < filesNames.length; i++ ) {
-         System.out.println(filesNames[i]);
-      }
-   }
+      		System.out.println("\nFile with extenstion txt\n");
+      		String[] filesNames = currentDirectory.list( new SuffixFileFilter("txt") );
+      		for( int i = 0; i < filesNames.length; i++ )
+         		System.out.println(filesNames[i]);
+     	 }
+  
 
 	/*********** Web UI Test Utility **********/
 	/**
