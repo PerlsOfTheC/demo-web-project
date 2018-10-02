@@ -1,19 +1,12 @@
 package edu.csupomona.cs480.controller;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-
-
-
 
 import com.google.common.collect.ImmutableMap;
 
 import org.apache.commons.math3.stat.Frequency;
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.monitor.FileEntry;
 
 import org.imgscalr.Scalr;
 import org.jsoup.Jsoup;
@@ -274,22 +267,7 @@ public class WebController {
 		return myDogs.toString();
 	}
 
-	/**
-	 * This uses Commons IO to provide the state of a file or directory, File attributes
-	 * at a point in time.
-	 */
-	@RequestMapping(value = "/cs480/commons", method = RequestMethod.GET)
-	void usingFileEntry() throws IOException {
-		//get the file object
-		File file = FileUtils.getFile("input.txt");
-
-		FileEntry fileEntry = new FileEntry(file);
-
-		System.out.println("Monitored File: " + fileEntry.getFile());
-		System.out.println("File name: " + fileEntry.getName());
-		System.out.println("Is Directory: " + fileEntry.isDirectory());
-	}
-  
+	
 
 	/*********** Web UI Test Utility **********/
 	/**
