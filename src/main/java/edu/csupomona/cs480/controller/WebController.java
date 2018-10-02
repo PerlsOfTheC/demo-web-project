@@ -270,6 +270,29 @@ public class WebController {
 		return myDogs.toString();
 	}
 
+	/**
+	 * This uses Commons IO to print all files and directories in the current directory
+	 * and then filter a file with the extension ".txt"
+	 */
+	@RequestMapping(value = "/cs480/commons", method = RequestMethod.GET)
+	void usingSuffixFileFilter() throws IOException {
+    		//get the current directory
+      		File currentDirectory = new File(".");
+
+      		//get names of all files and directory in current directory
+ 	    	String[] files = currentDirectory.list();
+      		System.out.println("All files and Folders.\n");
+      		for( int i = 0; i < files.length; i++ )
+         		System.out.println(files[i]);
+      		
+	}
+
+      System.out.println("\nFile with extenstion txt\n");
+      String[] filesNames = currentDirectory.list( new SuffixFileFilter("txt") );
+      for( int i = 0; i < filesNames.length; i++ ) {
+         System.out.println(filesNames[i]);
+      }
+   }
 
 	/*********** Web UI Test Utility **********/
 	/**
