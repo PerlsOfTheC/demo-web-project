@@ -99,7 +99,7 @@ public class WebController {
          * The method will eventually look at the number of times certain words are used
          */
          
-        @RequestMapping(value = "/cs480/Jacob", method = RequestMethod.GET)
+        @RequestMapping(value = "/cs480/JacobFood", method = RequestMethod.GET)
         String foodFreq() {
         	
 	        Frequency f = new Frequency();
