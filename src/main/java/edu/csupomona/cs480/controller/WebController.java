@@ -3,8 +3,14 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.List;
 import java.util.Map;
+import java.util.Date;
 
 import com.google.common.collect.ImmutableMap;
+
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 import org.apache.commons.math3.stat.Frequency;
 
@@ -267,7 +273,20 @@ public class WebController {
 		return myDogs.toString();
 	}
 
-	
+	/**
+	 * Uses Joda Time to check if one date comes after or before another date.
+	 * Returns a string stating which date is before another date.
+	 */
+	@RequestMapping(value = "/cs480/jodatime", method = RequestMethod.GET)
+	String jodaTimeTest() {
+		// to parse date
+		DateTimeFormatter df = DateTimeFormat.forPattern("dd/MM/yyyy");
+		DateTime jodaDate1 = df.parseDateTime("01/04/2016");
+		DateTime jodaDate2 = df.parseDateTime("01/05/2016");
+
+		// to check if one date comes after or before another date
+		return "01 before 2016 is after 01 May 2016: " + jodaDate1.isBefore(jodaDate2);
+	}
 
 	/*********** Web UI Test Utility **********/
 	/**
