@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Map;
 
 
-<<<<<<< HEAD
-//import org.apache.commons.math3.stat.FrequencyTest;
+
+
 import com.google.common.collect.ImmutableMap;
-=======
+
 import org.apache.commons.math3.stat.Frequency;
->>>>>>> 9f7ef61531dd6045d95355763f5bb39829125d8c
+
 import org.imgscalr.Scalr;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -94,6 +94,7 @@ public class WebController {
          * This will be accessed through the link:
          *      http://localhost:8080/cs480/FoodFrequency
          * The method will eventually look at the number of times certain words are used
+         */
          
         @RequestMapping(value = "/cs480/Jacob", method = RequestMethod.GET)
         String foodFreq() {
@@ -108,7 +109,7 @@ public class WebController {
 
                 return "\nComplete";
         }
-        */
+
         
 	/**
 	 * This is a simple example of how the HTTP API works.

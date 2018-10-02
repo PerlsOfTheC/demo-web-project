@@ -69,18 +69,17 @@
 			<version>4.2</version>
 		</dependency>
 
-<!-- 		<dependency>
+	<dependency>
   			<groupId>org.apache.commons</groupId>
-<<<<<<< HEAD
-  			<artifactId>commons-math4</artifactId>
+
+  			<!-- 	<artifactId>commons-math4</artifactId>
  			<version>4.0-SNAPSHOT</version>
-		</dependency> -->
-=======
+		</dependency>   -->
+
   			<artifactId>commons-math3</artifactId>
  			<version>3.6</version>
-		</dependency>
->>>>>>> 9f7ef61531dd6045d95355763f5bb39829125d8c
-
+		</dependency> 
+		
 		<dependency>
 			<groupId>org.jsoup</groupId>
 			<artifactId>jsoup</artifactId>
