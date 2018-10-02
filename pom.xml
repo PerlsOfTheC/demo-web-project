@@ -93,11 +93,11 @@
   			<version>26.0-jre</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.jfree/jfreechart -->
+		<!-- https://mvnrepository.com/artifact/stax/stax-api -->
 		<dependency>
-	 		<groupId>org.jfree</groupId>
-    			<artifactId>jfreechart</artifactId>
-    			<version>1.0.19</version>
+	 		<groupId>stax</groupId>
+    			<artifactId>stax-api</artifactId>
+    			<version>1.0</version>
 		</dependency>
 
 
