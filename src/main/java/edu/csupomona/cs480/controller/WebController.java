@@ -6,6 +6,10 @@ import java.util.List;
 
 import org.apache.commons.math3.stat.Frequency;
 import org.imgscalr.Scalr;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -66,9 +70,6 @@ public class WebController {
          */
         @RequestMapping(value = "/cs480/Amanda", method = RequestMethod.GET)
         String whaddupStatus() {
-                // You can replace this with other string,
-                // and run the application locally to check your changes
-                // with the URL: http://localhost:8080/
                 return "whaddup whadduppp";
         }
 
@@ -140,6 +141,32 @@ public class WebController {
 		ImageIO.write(padding, "jpg", new File("test_thumb.jpg"));
 		return "picture edited";
 	}
+
+	/**
+         * This is a simple example of how to use a HTML parser
+         * to retrieve the data and return it as an HTTP response.
+         * 
+         * This will print the name of recipes along with their hyperlinks.
+         * Try it in your web browser:
+         *      http://localhost:8080/cs480/Recipes
+         */
+	@RequestMapping(value = "/cs480/Recipes", method = RequestMethod.GET)
+        String Recipes() 
+        {
+            String result = "";             
+     	    Document doc;
+            try {
+            	doc = Jsoup.connect("http://pinchmysalt.com/recipe-list/").get();
+            	Elements links = doc.select("a[href]");
+            	for (Element link : links) {
+                    result+=link.text()+": "+link.attr("href")+" ...... ";
+                }
+            } catch (IOException e) {
+            	e.printStackTrace();
+            }
+            return result;
+
+        }
 
 	@RequestMapping(value = "/cs480/user/{userId}", method = RequestMethod.GET)
 	User getUser(@PathVariable("userId") String userId) {
