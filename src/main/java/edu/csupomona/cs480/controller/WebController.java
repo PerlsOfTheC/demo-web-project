@@ -1,14 +1,13 @@
 package edu.csupomona.cs480.controller;
 
+import java.awt.image.BufferedImage;
+import java.io.*;
 import java.util.List;
 
 import org.apache.commons.math3.stat.FrequencyTest;
+import org.imgscalr.Scalr;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.csupomona.cs480.App;
@@ -17,6 +16,7 @@ import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.GpsProductManager;
 import edu.csupomona.cs480.data.provider.UserManager;
 
+import javax.imageio.ImageIO;
 
 /**
  * This is the controller used by Spring framework.
@@ -71,7 +71,8 @@ public class WebController {
                 // with the URL: http://localhost:8080/
                 return "whaddup whadduppp";
         }
-        
+
+
         /**
          * This addition specifies the function from calling
          *      http://localhost:8080/cs480/Jacob
@@ -123,6 +124,23 @@ public class WebController {
 	 * Try it in your web browser:
 	 * 	http://localhost:8080/cs480/user/user101
 	 */
+
+	@RequestMapping(value="/upload", method=RequestMethod.GET)
+	public String handleFileUpload() throws IOException {
+		BufferedImage image = ImageIO.read(getClass().getResource("/test.jpg"));
+		// BufferedImage image = ImageIO.read(new File("picture/test.jpg"));
+		BufferedImage small = Scalr.resize(image,
+				Scalr.Method.ULTRA_QUALITY,
+				Scalr.Mode.AUTOMATIC,
+				500, 500,
+				Scalr.OP_ANTIALIAS);
+
+		BufferedImage cropimage = Scalr.crop(image, 1000, 1000, Scalr.OP_ANTIALIAS);
+		BufferedImage padding   = Scalr.pad(image, 200, Scalr.OP_DARKER);
+		ImageIO.write(padding, "jpg", new File("test_thumb.jpg"));
+		return "picture edited";
+	}
+
 	@RequestMapping(value = "/cs480/user/{userId}", method = RequestMethod.GET)
 	User getUser(@PathVariable("userId") String userId) {
 		User user = userManager.getUser(userId);

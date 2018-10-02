@@ -62,13 +62,13 @@
 		    <version>1.8.1</version>
 		</dependency>
 
+        <!-- For scalr -->
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-tools-maven-plugin</artifactId>
-			<version>5.3.6.Final</version>
-			<type>maven-plugin</type>
+			<groupId>org.imgscalr</groupId>
+			<artifactId>imgscalr-lib</artifactId>
+			<version>4.2</version>
 		</dependency>
-		
+
 		<dependency>
   			<groupId>org.apache.commons</groupId>
   			<artifactId>commons-math4</artifactId>
@@ -81,6 +81,8 @@
 			<version>1.11.3</version>
 		</dependency>
 		
+
+
 	</dependencies>
 
 	<reporting>
