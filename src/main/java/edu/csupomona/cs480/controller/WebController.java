@@ -1,6 +1,7 @@
 package edu.csupomona.cs480.controller;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -11,7 +12,8 @@ import java.util.Map;
 import com.google.common.collect.ImmutableMap;
 
 import org.apache.commons.math3.stat.Frequency;
-import org.apache.commons.io.filefilter.SuffixFileFilter;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.monitor.FileEntry;
 
 import org.imgscalr.Scalr;
 import org.jsoup.Jsoup;
@@ -273,27 +275,20 @@ public class WebController {
 	}
 
 	/**
-	 * This uses Commons IO to print all files and directories in the current directory
-	 * and then filter a file with the extension ".txt"
+	 * This uses Commons IO to provide the state of a file or directory, File attributes
+	 * at a point in time.
 	 */
 	@RequestMapping(value = "/cs480/commons", method = RequestMethod.GET)
-	void usingSuffixFileFilter() throws IOException {
-    		//get the current directory
-      		File currentDirectory = new File(".");
+	void usingFileEntry() throws IOException {
+		//get the file object
+		File file = FileUtils.getFile("input.txt");
 
-      		//get names of all files and directory in current directory
- 	    	String[] files = currentDirectory.list();
-      		System.out.println("All files and Folders.\n");
-      		for( int i = 0; i < files.length; i++ )
-         		System.out.println(files[i]);
-      		
-	
+		FileEntry fileEntry = new FileEntry(file);
 
-      		System.out.println("\nFile with extenstion txt\n");
-      		String[] filesNames = currentDirectory.list( new SuffixFileFilter("txt") );
-      		for( int i = 0; i < filesNames.length; i++ )
-         		System.out.println(filesNames[i]);
-     	 }
+		System.out.println("Monitored File: " + fileEntry.getFile());
+		System.out.println("File name: " + fileEntry.getName());
+		System.out.println("Is Directory: " + fileEntry.isDirectory());
+	}
   
 
 	/*********** Web UI Test Utility **********/
