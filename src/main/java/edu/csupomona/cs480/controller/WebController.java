@@ -1,10 +1,12 @@
 package edu.csupomona.cs480.controller;
-
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.List;
+import java.util.Map;
 
-import org.apache.commons.math3.stat.FrequencyTest;
+
+//import org.apache.commons.math3.stat.FrequencyTest;
+import com.google.common.collect.ImmutableMap;
 import org.imgscalr.Scalr;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -82,11 +84,12 @@ public class WebController {
         String userDescrip() {
                 return "\n\nI like Bacon, Purple, and Petre";
         }
+        
         /**
          * This will be accessed through the link:
          *      http://localhost:8080/cs480/FoodFrequency
          * The method will eventually look at the number of times certain words are used
-         */
+         
         @RequestMapping(value = "/cs480/Jacob", method = RequestMethod.GET)
         String foodFreq() {
         	
@@ -100,6 +103,8 @@ public class WebController {
 
                 return "\nComplete";
         }
+        */
+        
 	/**
 	 * This is a simple example of how the HTTP API works.
 	 * It returns a string that forms and disappears letter by letter in the HTTP response.
@@ -207,13 +212,30 @@ public class WebController {
 		return gpsProductManager.listAllGpsProducts();
 	}
 	
-	/* Leslies uncreative method*/
+	/**
+	 * This API displays an un-creative string.
+	 *
+	 * @return
+	 */
 	@RequestMapping(value = "/cs480/leslie", method = RequestMethod.GET)
-	String unCreative() {
+	String UnCreative() {
 		// You can replace this with other string,
 		// and run the application locally to check your changes
 		// with the URL: http://localhost:8080/
 		return "Wow, this is all I did";
+	}
+	
+	/**
+	 * Uses google guava to create an Immutable map, which creates a map 
+	 * whose contents will not change. 
+	 * Returns a string of the Map
+	 * 
+	 * @return
+	 */	
+	@RequestMapping(value = "/cs480/googleguava", method = RequestMethod.GET)
+	String guavaTest() {
+		Map<String, Integer> myDogs = ImmutableMap.of("Roxy", 11, "Bella", 6, "Waldo", 1);
+		return myDogs.toString();
 	}
 
 
