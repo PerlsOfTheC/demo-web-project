@@ -93,11 +93,11 @@
   			<version>26.0-jre</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/stax/stax-api -->
+		<!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
 		<dependency>
-	 		<groupId>stax</groupId>
-    			<artifactId>stax-api</artifactId>
-    			<version>1.0</version>
+			<groupId>joda-time</groupId>
+    			<artifactId>joda-time</artifactId>
+    			<version>2.10</version>
 		</dependency>
 
 
