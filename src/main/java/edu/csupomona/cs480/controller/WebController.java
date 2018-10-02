@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.List;
 
-import org.apache.commons.math3.stat.FrequencyTest;
+import org.apache.commons.math3.stat.Frequency;
 import org.imgscalr.Scalr;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
